@@ -276,7 +276,10 @@ position: relative;
     display: flex;
     justify-content: center;
     gap: 12px;
-    margin: 10px 0;
+    border-top: 2px solid var(--cyan);
+    box-shadow: 0 0 111px rgba(56, 189, 248, 0.7);
+        padding: 10px 0;
+
   }
 
   .suggestion {
@@ -311,10 +314,45 @@ position: relative;
     box-shadow: 0 0 10px #00eaff;
   }
   ::-webkit-scrollbar-button { display: none; }
+  footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 1.1rem;
+    background: linear-gradient(90deg, #1E1E2E, #0F0F1A, #1E1E2E);
+    color: #4FC3F7;
+    letter-spacing: 1px;
+    box-shadow: 0 -2px 15px rgba(79, 195, 247, 0.2);
+    backdrop-filter: blur(6px);
+  }
+
+  footer span {
+    background: linear-gradient(90deg, #4FC3F7, #00E5FF, #81D4FA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+  }
+ /* ✅ Responsive CSS */
+  @media (max-width: 900px) {
+    .chat-container { height: 450px; }
+    h1 { font-size: 1.6rem; }
+  }
 
   @media (max-width: 600px) {
-    .message { max-width: 85%; font-size: 14px; }
-    .chat-container { height: 480px; }
+    .chat-container { width: 95%; height: 400px; border-radius: 16px; }
+    .message { max-width: 85%; font-size: 14px; padding: 10px 12px; }
+    .tool-btn { width: 34px; height: 34px; font-size: 18px; }
+    .send-btn { width: 36px; height: 36px; font-size: 16px; }
+    footer { font-size: 0.9rem; padding: 10px 0; }
+    .circle { width: 300px; height: 300px; }
+  }
+
+  @media (max-width: 400px) {
+    h1 { font-size: 1.3rem; }
+    .chat-container { height: 360px; }
+    .suggestions { flex-direction: column; gap: 8px; }
   }
 </style>
 </head>
@@ -345,7 +383,9 @@ position: relative;
     <button class="send-btn" onclick="sendMessage()">➤</button>
   </div>
 </div>
-
+  <footer>
+    © 2025 <span> InteraClass | Mô phỏng Sinh học</span> Đồng hành cùng học sinh Việt Nam. 🚀
+  </footer>
 <script>
 const chatBox = document.getElementById('chatBox');
 const input = document.getElementById('userInput');
