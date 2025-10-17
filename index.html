@@ -30,26 +30,6 @@ background-color:#0F0F1A;
     position: relative;
   }
 
-.circle{
-    width: 450px;
-    height: 450px;
-    border-radius: 50%;
-    background: radial-gradient(circle at center, #4FC3F7 0%, #1E1E2E 60%, #0F0F1A 100%);
-    box-shadow: 0 0 50px 20px rgba(79, 195, 247, 0.3);
-    animation:  pulse-bg 15s ease-out infinite;
-    position:absolute;
-}
-
-@keyframes pulse-bg {
-    0%, 100% {
-      transform: scale(0.5);
-      opacity: 0.9;
-    }
-    50% {
-      transform: scale(2.2);
-      opacity: 0.5;
-    }
-}
 
   h1 {
     font-family: 'Orbitron', sans-serif;
@@ -73,6 +53,7 @@ background-color:#0F0F1A;
     position: relative;
     z-index: 1;
     backdrop-filter: blur(10px);
+    margin-bottom: 8%;
   }
 
   .chat-box {
@@ -334,31 +315,43 @@ position: relative;
     -webkit-text-fill-color: transparent;
     font-weight: 700;
   }
- /* ✅ Responsive CSS */
-  @media (max-width: 900px) {
-    .chat-container { height: 450px; }
-    h1 { font-size: 1.6rem; }
-  }
 
-  @media (max-width: 600px) {
-    .chat-container { width: 95%; height: 400px; border-radius: 16px; }
-    .message { max-width: 85%; font-size: 14px; padding: 10px 12px; }
-    .tool-btn { width: 34px; height: 34px; font-size: 18px; }
-    .send-btn { width: 36px; height: 36px; font-size: 16px; }
-    footer { font-size: 0.9rem; padding: 10px 0; }
-    .circle { width: 300px; height: 300px; }
-  }
 
-  @media (max-width: 400px) {
-    h1 { font-size: 1.3rem; }
-    .chat-container { height: 360px; }
-    .suggestions { flex-direction: column; gap: 8px; }
-  }
+/* PC */
+@media (min-width:1024px){
+
+}
+
+/* tablet */
+@media (min-width:740px) and (max-width:1023){
+.suggestion{
+  font-size: 10px;
+}
+}
+
+/* mobile */
+@media (max-width:740px){
+.suggestion{
+  font-size: 12px;
+}
+
+h1 { font-size: 1.5rem; }
+
+#userInput{
+  width: 50px;
+}
+
+.chat-container{
+    margin-bottom: 15% !important;
+
+}
+}
+
 </style>
 </head>
 
 <body>
-  <div class="circle"></div>
+
 
 <h1>Chuyên gia AI - Sinh học</h1>
 
